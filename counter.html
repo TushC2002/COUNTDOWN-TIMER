@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{  font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(#1A120B,#060047, #D800A6);
+        }
+        div h1{
+            font-size: 100px;
+            font-family: 'Times New Roman', Times, sans-serif;
+            color: #C780FA;
+        }
+        div h3{
+            font-size: 40px;
+            font-family: 'Times New Roman', Times, sans-serif;
+            color: #E3ACF9;
+
+        }
+        p{
+            height: 125px;
+            width: 600px;
+            background-color: #03001C;
+            color:#B9F3FC;
+            line-height: 100px;
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+        
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>BIRTHDAY</h1>
+        <h3>Countdown Timer</h3>
+        <p id="demo"></p>
+    </div>
+    <script>
+        var dest = new Date(" mar 31, 2023 00:00:00").getTime();
+        var x =setInterval(function(){
+        var now = new Date().getTime();
+
+        var diff = dest - now ;
+        
+        var days = Math.floor(diff/ (1000*60*60*24));
+
+        var hours =  Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+        
+        var minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+
+        var seconds = Math.floor((diff % (1000*60)) / 1000);
+
+        document.getElementById("demo").innerHTML = days + "d," + hours + "hrs:" + minutes + "m:" + seconds + "s"
+        } ,1000);
+
+    </script>
+</body>
+</html>
